@@ -3,45 +3,190 @@
 @tailwind utilities;
 
 @layer base {
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-bold;
+  :children {
+    --background: 240 50% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 40.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
   }
-  h1 {
-    @apply text-4xl;
-  }
-  h2 {
-    @apply text-3xl;
-  }
-  h3 {
-    @apply text-2xl;
-  }
-  h4 {
-    @apply text-xl;
-  }
-  p {
-    @apply text-sm text-default-text;
-  }
-  form {
-    @apply rounded-xl p-4;
-  }
-  label {
-    @apply mt-4;
-  }
-  input,
-  select,
-  textarea {
-    @apply m-1 rounded bg-card p-1;
+
+  .dark {
+    --background: 240 50% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 40.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
-@layer components {
-  .icon {
-    @apply text-default-text text-xl;
+@layer base {
+  /* * {
+    @apply border-border;
+  } */
+  /* body {
+    @apply bg-background text-foreground;
+  } */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
-  .btn {
-    @apply hover:no-underline bg-blue-accent hover:bg-blue-accent-hover tracking-wider w-full text-center text-nav font-bold cursor-pointer uppercase px-4 py-2 rounded-md transition-colors block;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #004aad, #38b6ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@media screen and (max-width: 1366px) {
+  .firstBox {
+    padding-top: 1rem;
+    background-color: #004aad;
+    border-radius: 20px;
+    height: 30rem;
+    box-shadow: 0 0 5px #0048aa;
+    width: 100%;
+    align-items: center;
+  }
+
+  .horizontalBoxContainer {
+    max-width: 95%;
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .halfBox {
+    padding-top: 1rem;
+    background-color: #020b17;
+    border-radius: 20px;
+    height: 30rem;
+    box-shadow: 0 0 5px #0048aa;
+    width: 100%;
+  }
+
+  .headBoxText {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+  .horizontalBoxContainer {
+    max-width: 100%;
+    width: 100%;
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  /* .halfBox {
+  } */
+}
+
+@media screen and (max-width: 480px) {
+  .horizontalBoxContainer {
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column;
+  }
+}
+
+.animated-spinner {
+  transform-origin: center;
+  animation: loader-spin 0.75s step-end infinite;
+}
+@keyframes loader-spin {
+  8.3% {
+    transform: rotate(30deg);
+  }
+  16.6% {
+    transform: rotate(60deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  33.3% {
+    transform: rotate(120deg);
+  }
+  41.6% {
+    transform: rotate(150deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  58.3% {
+    transform: rotate(210deg);
+  }
+  66.6% {
+    transform: rotate(240deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  83.3% {
+    transform: rotate(300deg);
+  }
+  91.6% {
+    transform: rotate(330deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

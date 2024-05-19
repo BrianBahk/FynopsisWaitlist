@@ -1,59 +1,34 @@
 import React from "react";
-import TicketCard from "./(components)/TicketCard";
 
-const getTickets = async () => {
-  try {
-    const res = await fetch("http://localhost:3000/api/Tickets", {
-      cache: "no-store",
-    });
+import { Poppins } from "next/font/google";
+import TicketForm from "./(components)/TicketForm";
+const poppinsTitle = Poppins({ weight: "500", subsets: ["latin"] });
+const poppinsSub = Poppins({ weight: "300", subsets: ["latin"] });
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch topics");
-    }
-
-    return res.json();
-  } catch (error) {
-    console.log("Error loading topics: ", error);
-  }
+const metadata = {
+  title: "Fynopsis",
+  description: "The Future of Financial News",
 };
 
-const Dashboard = async () => {
-  const data = await getTickets();
-
-  // Make sure we have tickets needed for production build.
-  if (!data?.tickets) {
-    return <p>No tickets.</p>;
-  }
-
-  const tickets = data.tickets;
-
-  const uniqueCategories = [
-    ...new Set(tickets?.map(({ category }) => category)),
-  ];
-
+const HomePage = () => {
   return (
-    <div className="p-5">
-      <div>
-        {tickets &&
-          uniqueCategories?.map((uniqueCategory, categoryIndex) => (
-            <div key={categoryIndex} className="mb-4">
-              <h2>{uniqueCategory}</h2>
-              <div className="lg:grid grid-cols-2 xl:grid-cols-4 ">
-                {tickets
-                  .filter((ticket) => ticket.category === uniqueCategory)
-                  .map((filteredTicket, _index) => (
-                    <TicketCard
-                      id={_index}
-                      key={_index}
-                      ticket={filteredTicket}
-                    />
-                  ))}
-              </div>
-            </div>
-          ))}
-      </div>
-    </div>
+    <>
+      <section className="pt-16 md:pt-20 lg:pt-24 xl:pt-20 mx-auto max-w-[90%] md:max-w-[70%] lg:max-w-[80%] xl:max-w-[80%] pb-4">
+        <div className="left-align">
+          <h1 className="pb-4 poppinsTitle className title-text  font-medium max-w-[90%] sm:max-w-[70%] md:max-w-[80%] lg:max-w-[80%] text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl leading-tight">
+            The <span className="gradient-text">Future</span> of Financial News
+          </h1>
+
+          <p className="pb-4 poppinsSub classNamesub-text font-light text-white sm:text-1xl md:text-2xl lg:text-2xl xl:text-3xl ">
+            Cut the noise out. Get the news you deserve.
+          </p>
+
+          <form className="text-center"></form>
+          <TicketForm className="left-align" />
+        </div>
+      </section>
+    </>
   );
 };
 
-export default Dashboard;
+export default HomePage;
