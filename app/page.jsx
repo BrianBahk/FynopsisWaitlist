@@ -13,8 +13,8 @@ const metadata = {
 const HomePage = () => {
   return (
     <>
-      <section className="pt-16 md:pt-20 lg:pt-24 xl:pt-20 mx-auto max-w-[90%] md:max-w-[70%] lg:max-w-[80%] xl:max-w-[80%] pb-4">
-        <div className="left-align">
+      <section className="flex pt-40 mx-auto max-w-[90%] md:max-w-[70%] lg:max-w-[80%] xl:max-w-[80%] pb-4">
+        <div className="left-align ">
           <h1 className="pb-4 poppinsTitle className title-text  font-medium max-w-[90%] sm:max-w-[70%] md:max-w-[80%] lg:max-w-[80%] text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl leading-tight">
             The <span className="gradient-text">Future</span> of Financial News
           </h1>

@@ -37,7 +37,7 @@ const TicketForm = () => {
   return (
     <div className="flex ">
       <form
-        className="flex flex-col gap-3 w-1/2"
+        className="flex flex-row gap-3 w-1/2"
         method="post"
         onSubmit={handleSubmit}
       >
@@ -49,7 +49,7 @@ const TicketForm = () => {
           onChange={handleChange}
           required={true}
           value={formData.title}
-          className=" button-input w-ful border border-white bg-transparent px-4 py-2 rounded-xl focus:outline-none focus:border-blue-500 text-white align-middle "
+          className=" button-input w-ful border border-white bg-transparent px-4 py-2 rounded-xl flex-grow focus:outline-none focus:border-blue-500 text-white align-middle "
         />
         <input
           type="submit"
