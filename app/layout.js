@@ -1,5 +1,6 @@
 import bg from ".//images/background3.png";
 import { Inter } from "next/font/google";
+import Navbar from "./(components)/Navbar";
 import "./globals.css";
 
 // import { config } from "@fortawesome/fontawesome-svg-core";
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
               overflow: "hidden", // Hide overflow content
             }}
           >
+            <Navbar className="background-transparent" />
             {/* <Header /> */}
             {children}
             <div className="h-20"></div>
