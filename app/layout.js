@@ -1,6 +1,7 @@
 import bg from ".//images/background3.png";
 import { Inter } from "next/font/google";
 import "./globals.css";
+
 // import { config } from "@fortawesome/fontawesome-svg-core";
 export const metadata = {
   title: "Fynopsis",

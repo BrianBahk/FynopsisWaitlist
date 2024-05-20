@@ -48,11 +48,9 @@ const TicketForm = () => {
           placeholder="Enter your email"
           onChange={handleChange}
           required={true}
-          value={formData.email}
+          value={formData.title}
           className=" button-input w-ful border border-white bg-transparent px-4 py-2 rounded-xl focus:outline-none focus:border-blue-500 text-white align-middle "
         />
-      </form>
-      <div className="flex justify-between align-middle">
         <input
           type="submit"
           className="btn "
@@ -72,7 +70,7 @@ const TicketForm = () => {
             alignItems: "left",
           }}
         />
-      </div>
+      </form>
     </div>
   );
 };
