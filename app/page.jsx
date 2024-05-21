@@ -13,18 +13,18 @@ const metadata = {
 const HomePage = () => {
   return (
     <>
-      <section className="flex pt-40 mx-auto max-w-[90%] md:max-w-[70%] lg:max-w-[80%] xl:max-w-[80%] pb-4">
+      <section className="">
         <div className="left-align ">
-          <h1 className="pb-4 poppinsTitle className title-text  font-medium max-w-[90%] sm:max-w-[70%] md:max-w-[80%] lg:max-w-[80%] text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl leading-tight">
+          <h1 className={`${poppinsTitle.className} mb-[1%] mt-[2%] ml-[5%] text-5xl sm:text-6xl  md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-9xl text-white sm:max-w-[50%] md:max-w-[60%] lg:max-w-[70%] xl:max-w-[70%]`}>
             The <span className="gradient-text">Future</span> of Financial News
           </h1>
 
-          <p className="pb-4 poppinsSub classNamesub-text font-light text-white sm:text-1xl md:text-2xl lg:text-2xl xl:text-3xl ">
+          <p className={`${poppinsSub.className} mb-[1%] ml-[5%] text-sm sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-white`}>
             Cut the noise out. Get the news you deserve.
           </p>
 
-          <form className="text-center"></form>
-          <TicketForm className="left-align" />
+          <form></form>
+          <TicketForm/>
         </div>
       </section>
     </>

@@ -90,6 +90,11 @@
   color: transparent;
 }
 
+.form {
+  margin-left: 4%;
+  background-color: black;
+}
+
 @media screen and (max-width: 1366px) {
   .firstBox {
     padding-top: 1rem;
