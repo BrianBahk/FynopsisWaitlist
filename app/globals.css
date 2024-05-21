@@ -90,9 +90,110 @@
   color: transparent;
 }
 
+
 .form {
   margin-left: 4%;
   background-color: black;
+}
+
+.wave-container {
+  --mask: linear-gradient(to bottom, 
+      rgba(0,0,0, 1) 0,   rgba(0,0,0, .8) 70%, 
+      rgba(0,0,0, 0) 95%, rgba(0,0,0, 0) 0
+  ) 100% 50% / 100% 100% repeat-x;
+  -webkit-mask: var(--mask); 
+  mask: var(--mask);
+
+  height: 20vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+  /* --mask: linear-gradient(to bottom, 
+  rgba(0,0,0, 1) 0,   rgba(0,0,0, 1) 40%, 
+  rgba(0,0,0, 0) 95%, rgba(0,0,0, 0) 0
+) 100% 50% / 100% 100% repeat-x; */
+}
+
+.bottom-fade {
+  
+  background-color: #38b6ff;
+}
+
+.wave {
+  height: 12vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: url('./images/wave.png');
+  background-size: 150vh 20vh;
+}
+
+
+
+
+.wave.wave1 {
+  animation: animate 30s linear infinite;
+  z-index: 998;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 150vh;
+  }
+}
+
+.wave.wave2 {
+  animation: animate2 15s linear infinite;
+  z-index: 997;
+  opacity: .8;
+  animation-delay: -5s;
+  bottom: -10px;
+}
+@keyframes animate2 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 150vh;
+  }
+}
+
+.wave.wave3 {
+  animation: animate3 10s linear infinite;
+  z-index: 996;
+  opacity: .6;
+  animation-delay: -2s;
+  bottom: -10px;
+}
+@keyframes animate3 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 150vh;
+  }
+}
+
+.wave.wave4 {
+  animation: animate4 5s linear infinite;
+  z-index: 995;
+  opacity: .3;
+  animation-delay: -1s;
+  bottom: -12px;
+}
+@keyframes animate4 {
+  0% {
+    background-position-x: 150vh;
+  }
+  100% {
+    background-position-x: 0;
+  }
 }
 
 @media screen and (max-width: 1366px) {

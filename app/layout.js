@@ -19,35 +19,35 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     const updateHeight = () => {
       const aspectRatio = window.innerWidth / window.innerHeight;
-      if(aspectRatio == 16/9) {
+      if (aspectRatio == 16 / 9) {
         setHeight("85vh");
       }
 
-      if(aspectRatio == 9/16) {
+      if (aspectRatio == 9 / 16) {
         setHeight("60vh");
       }
 
-      if(aspectRatio == 512/683) {
+      if (aspectRatio == 512 / 683) {
         setHeight("65vh");
       }
 
-      if(aspectRatio == 4/3) {
+      if (aspectRatio == 4 / 3) {
         setHeight("95vh");
       }
 
-      if(aspectRatio == 3/4) {
+      if (aspectRatio == 3 / 4) {
         setHeight("70vh");
       }
 
-      if(aspectRatio == 375/812) {
+      if (aspectRatio == 375 / 812) {
         setHeight("100vh");
       }
 
-      if(aspectRatio == 812/375) {
+      if (aspectRatio == 812 / 375) {
         setHeight("150vh");
       }
 
-      if(aspectRatio == 667/375) {
+      if (aspectRatio == 667 / 375) {
         setHeight("95vh");
       }
 
@@ -77,9 +77,18 @@ export default function RootLayout({ children }) {
                 width: "100%",
                 height: height, // Dynamic height
                 overflow: "hidden",
+                position: "relative",
               }}
             >
               <Navbar className="background-transparent" />
+              <section class="wave-container">
+                <div class="bottom-fade">
+                  <div class="wave wave1"></div>
+                </div>
+                <div class="wave wave2"></div>
+                <div class="wave wave3"></div>
+                <div class="wave wave4"></div>
+              </section>
               {children}
             </div>
             <div>
