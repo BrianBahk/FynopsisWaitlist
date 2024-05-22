@@ -1,5 +1,5 @@
 "use client";
-import bg from "./images/background3.png";
+import bg from "./images/background4.png";
 import { Inter } from "next/font/google";
 import Navbar from "./(components)/Navbar";
 import InformationPage from "./(components)/InformationPage";
@@ -82,12 +82,14 @@ export default function RootLayout({ children }) {
             >
               <Navbar className="background-transparent" />
               <section class="wave-container">
-                <div class="bottom-fade">
-                  <div class="wave wave1"></div>
+                <div className="bottom-fade">
+                  <div className="wave wave1"></div>
                 </div>
-                <div class="wave wave2"></div>
-                <div class="wave wave3"></div>
-                <div class="wave wave4"></div>
+                <div className="wave wave2"></div>
+                <div className="wave wave3"></div>
+                <div className="wave wave4"></div>
+                <div className="wave wave5"></div>
+                <div className="wave wave6"></div>
               </section>
               {children}
             </div>
