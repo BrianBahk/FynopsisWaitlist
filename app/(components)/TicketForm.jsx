@@ -50,6 +50,9 @@ const TicketForm = () => {
           required={true}
           value={formData.title}
           className="max-w-[110%] sm:max-w-[110%] md: max-w-[110%] xl:max-w-[110%] 2xl:max-w-[110%] button-input border border-white bg-transparent px-4 py-2 rounded-xl flex-grow focus:outline-none focus:border-blue-500 text-white align-middle "
+        style = {{
+          zIndex: "10001",
+        }}
         />
         <input
           type="submit"
@@ -67,6 +70,7 @@ const TicketForm = () => {
             maxHeight: "600px",
             color: "white",
             borderRadius: "10px",
+            zIndex: "10001",
           }}
         />
       </form>
