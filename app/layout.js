@@ -1,5 +1,5 @@
 "use client";
-import bg from "./images/background4.png";
+import bg from "./images/horizon-background.png";
 import { Inter } from "next/font/google";
 import Navbar from "./(components)/Navbar";
 import InformationPage from "./(components)/InformationPage";

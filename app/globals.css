@@ -104,7 +104,7 @@
   -webkit-mask: var(--mask); 
   mask: var(--mask);
 
-  height: 50vh;
+  height: 51vh;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -121,7 +121,7 @@
 }
 
 .wave {
-  height: 15vh;
+  height: 20vh;
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -130,7 +130,7 @@
 .wave.wave1 {
  
   background: url('./images/wave-one.png');
-  background-size: 150vh 25vh;
+  background-size: 150vh 26vh;
   animation: animate 45s linear infinite;
   z-index: 998;
   opacity: 1;
@@ -202,7 +202,7 @@
 
 .wave.wave5 {
   background: url('./images/wave-five.png');
-  background-size: 80vh 20vh;
+  background-size: 150vh 20vh;
   animation: animate5 13s linear infinite;
   z-index: 993;
   opacity: 1;
@@ -211,7 +211,7 @@
 }
 @keyframes animate5 {
   0% {
-    background-position-x: 80vh;
+    background-position-x: 150vh;
   }
   100% {
     background-position-x: 0;
