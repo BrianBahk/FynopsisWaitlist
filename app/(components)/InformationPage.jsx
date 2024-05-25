@@ -18,7 +18,7 @@ const cardsData = [
     title: "Target",
     content:
       "To empower investors of all backgrounds to make informed decisions, maximize returns, and achieve their financial goals with confidence and autonomy.",
-    icon: "🚀",
+    icon: "🎯",
   },
   // Add more card data here
 ];
@@ -27,7 +27,7 @@ const InformationPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center ">
       <div className="text-center text-5xl text-gray-300 font-bold mb-10">
-        What we do
+        What We Do
       </div>
       <div className="text-center text-xl text-gray-300 max-w-3xl mb-10">
         Fynopsis empowers individual investors worldwide with accessible,

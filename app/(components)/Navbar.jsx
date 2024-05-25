@@ -38,7 +38,7 @@ const Navbar = () => {
     <div>
       <div className="flex items-center p-4 bg-transparent">
         <Image src={icon} alt="Fynopsis Logo" className="h-16 w-auto" />
-        <h1 className={`${poppinsSub.className} text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-3xl text-white`}>
+        <h1 className={`${poppinsSub.className} text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-3xl text-white unselectable`}>
           Fynopsis
         </h1>
       </div>
