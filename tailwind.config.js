@@ -21,7 +21,28 @@ module.exports = {
         "blue-accent": "#0084d4",
         "blue-accent-hover": "#009fff",
       },
+      userSelect: ['none'],
+      placeholderColor: {
+        'white': '#FFFFFF',
+      }
     },
+    variants: {
+      extend: {
+        userSelect: ['responsive'],
+        placeholderColor: ['responsive', 'dark', 'focus', 'hover', 'active'],
+      }
+    }
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      addUtilities({
+        '.unselectable': {
+          '-webkit-user-select': 'none',
+          '-moz-user-select': 'none',
+          '-ms-user-select': 'none',
+          'user-select': 'none',
+        }
+      })
+    }
+  ],
 };

@@ -14,6 +14,7 @@ const TicketForm = () => {
       ...prevState,
       [name]: value,
     }));
+    
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,8 +26,13 @@ const TicketForm = () => {
     if (!res.ok) {
       throw new Error("Failed to create Ticket.");
     }
+    if (res.ok) {
+      document.getElementById("submitBtn").value = "Submitted!";
+      document.getElementById("submitBtn").style.backgroundImage = "linear-gradient(to top right, lightgray, lightgray)";
+    }
     router.refresh();
     router.push("/");
+
   };
   const startingTicketData = {
     title: "",
@@ -49,17 +55,22 @@ const TicketForm = () => {
           onChange={handleChange}
           required={true}
           value={formData.title}
-          className="max-w-[110%] sm:max-w-[110%] md: max-w-[110%] xl:max-w-[110%] 2xl:max-w-[110%] button-input border border-white bg-transparent px-4 py-2 rounded-xl flex-grow focus:outline-none focus:border-blue-500 text-white align-middle "
+          // className="max-w-[110%] sm:max-w-[110%] md: max-w-[110%] xl:max-w-[110%] 2xl:max-w-[110%] button-input border border-white bg-transparent px-4 py-2 rounded-xl flex-grow focus:outline-none focus:border-blue-500 text-white align-middle placeholder-white"
+          className="max-w-[110%] sm:max-w-[110%] md:max-w-[110%] xl:max-w-[110%] 2xl:max-w-[110%] button-input border border-white bg-transparent px-4 py-2 rounded-xl flex-grow focus:outline-none focus:border-blue-500 text-white align-middle placeholder-white hover:border-blue-300 focus:ring-2 focus:ring-blue-500"
         style = {{
           zIndex: "10001",
         }}
         />
         <input
+          id="submitBtn"
           type="submit"
-          className="btn "
+          // className="btn "
+          // className="btn transition-all duration-500 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          // className="btn transition-all duration-500 ease-in-out transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="btn bg-gradient-to-tr from-blue-700 to-sky-500 text-white rounded-xl transition-all duration-500 ease-in-out transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-blue-500 hover:from-blue-500 hover:to-blue-300"
           value="Join Waitlist"
           style={{
-            backgroundImage: "linear-gradient(to right, #004aad, #38b6ff)",
+            // backgroundImage: "linear-gradient(to top right, #004aad, #38b6ff)",
             transition: "background-image 0.5s",
             padding: "1.9% 2%",
             width: "10vw", // This makes the input 80% of the viewport width
