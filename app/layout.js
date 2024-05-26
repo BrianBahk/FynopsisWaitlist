@@ -3,13 +3,9 @@ import bg from "./images/horizon-background.png";
 import { Inter } from "next/font/google";
 import Navbar from "./(components)/Navbar";
 import InformationPage from "./(components)/InformationPage";
+import { Footer } from "./(components)/footer";
 import { useEffect, useState } from "react";
 import "./globals.css";
-
-// export const metadata = {
-//   title: "Fynopsis",
-//   description: "The Better way to finance your person",
-// };
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -80,22 +76,23 @@ export default function RootLayout({ children }) {
                 position: "relative",
               }}
             >
-              <Navbar className="background-transparent" />
-              <section class="wave-container">
-                <div className="bottom-fade">
-                  <div className="wave wave1"></div>
-                </div>
-                <div className="wave wave2"></div>
-                <div className="wave wave3"></div>
-                <div className="wave wave4"></div>
-                <div className="wave wave5"></div>
-                <div className="wave wave6"></div>
-              </section>
-              {children}
+            <Navbar className="background-transparent" />
+            <section className="wave-container">
+              <div className="bottom-fade">
+                <div className="wave wave1"></div>
+              </div>
+              <div className="wave wave2"></div>
+              <div className="wave wave3"></div>
+              <div className="wave wave4"></div>
+              <div className="wave wave5"></div>
+              <div className="wave wave6"></div>
+            </section>
+            {children}
             </div>
             <div>
               <InformationPage />
             </div>
+            <Footer />
           </div>
         </body>
       </html>
