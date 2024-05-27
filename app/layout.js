@@ -76,7 +76,7 @@ export default function RootLayout({ children }) {
                 position: "relative",
               }}
             >
-            <Navbar className="background-transparent" />
+            <Navbar className="background-transparent z-1000" />
             <section className="wave-container">
               <div className="bottom-fade">
                 <div className="wave wave1"></div>
@@ -90,7 +90,7 @@ export default function RootLayout({ children }) {
             {children}
             </div>
             <div>
-              <InformationPage />
+              <InformationPage/>
             </div>
             <Footer />
           </div>

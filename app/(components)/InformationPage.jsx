@@ -26,7 +26,7 @@ const cardsData = [
 
 const InformationPage = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center ">
+    <div className="min-h-screen flex flex-col items-center justify-center z-0">
       <div className="text-center text-5xl text-gray-300 font-bold mb-10">
         What We Do
       </div>
