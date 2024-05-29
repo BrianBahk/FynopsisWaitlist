@@ -3,9 +3,7 @@
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { toast } from "sonner"
-import { ButtonLoading } from "./ButtonLoading"; // Import the ButtonLoading component
 import { Loader2 } from "lucide-react"
-import { Button } from "./button";
 
 const TicketForm = () => {
   const router = useRouter();
@@ -46,8 +44,10 @@ const TicketForm = () => {
     setIsLoading(false); // Set loading state to false
 
     if (!res.ok) {
-      toast("Failed to create Ticket");
-    } else {
+      toast("Failed to create Ticket. Please contact support@fynopsis.ai");
+    } 
+    if (res.ok && !isLoading) {
+      toast("Submitted!");
       document.getElementById("submitBtn").value = "Submitted!";
       document.getElementById("submitBtn").style.backgroundImage = "linear-gradient(to top right, blue-500, blue-300)";
       document.getElementById("submitBtn").disabled = true;
