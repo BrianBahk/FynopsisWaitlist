@@ -13,7 +13,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 500) {
         setShowButton(true);
       } else {
         setShowButton(false);
@@ -45,9 +45,8 @@ const Navbar = () => {
       {showButton && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg"
-        >
-          <Image src={upArrow} alt="Scroll to top" className="h-6 w-6" />
+          className="fixed bottom-4 left-1/2 transform -translate-x-1/2 p-4 rounded-lg shadow-lg btn bg-gradient-to-tr from-blue-700 to-sky-500 text-white"> 
+            Subscribe Now
         </button>
       )}
     </div>

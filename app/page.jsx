@@ -2,6 +2,7 @@ import React from "react";
 
 import { Montserrat } from "next/font/google";
 import TicketForm from "./(components)/TicketForm";
+import { Toaster } from "./(components)/sonner"
 const styledTitle = Montserrat({ weight: "500", subsets: ["latin"] });
 const styledSubtitle = Montserrat({ weight: "300", subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ const HomePage = () => {
           <form></form>
           <TicketForm/>
         </div>
+        <Toaster/>
       </section>
     </>
   );

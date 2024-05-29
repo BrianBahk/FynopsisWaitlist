@@ -49,7 +49,7 @@ const CardSpotlight = (props: FeaturesProps) => {
             onBlur={handleBlur}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className='relative overflow-hidden rounded-xl border dark:border-gray-800 bg-white dark:bg-gradient-to-r dark:from-black dark:to-neutral-950 dark:shadow-2xl'
+            className='relative overflow-hidden rounded-xl border dark:border-gray-800 bg-black dark:bg-gradient-to-r dark:from-black dark:to-neutral-950 dark:shadow-2xl'
         >
 
             <div

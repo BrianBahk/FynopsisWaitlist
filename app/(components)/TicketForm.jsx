@@ -2,9 +2,15 @@
 
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { toast } from "sonner"
+import { ButtonLoading } from "./ButtonLoading"; // Import the ButtonLoading component
+import { Loader2 } from "lucide-react"
+import { Button } from "./button";
 
 const TicketForm = () => {
   const router = useRouter();
+  const [formData, setFormData] = useState({ title: "" });
+  const [isLoading, setIsLoading] = useState(false); // Loading state
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -14,37 +20,48 @@ const TicketForm = () => {
       ...prevState,
       [name]: value,
     }));
-    
   };
+
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!isValidEmail(formData.title)) {
+      toast("Please enter a valid email address");
+      return;
+    }
+
+    setIsLoading(true); // Set loading state to true
+
     const res = await fetch("/api/Tickets", {
       method: "POST",
       body: JSON.stringify({ formData }),
       "content-type": "application/json",
     });
+
+    setIsLoading(false); // Set loading state to false
+
     if (!res.ok) {
-      throw new Error("Failed to create Ticket.");
-    }
-    if (res.ok) {
+      toast("Failed to create Ticket");
+    } else {
       document.getElementById("submitBtn").value = "Submitted!";
-      document.getElementById("submitBtn").style.backgroundImage = "linear-gradient(to top right, lightgray, lightgray)";
+      document.getElementById("submitBtn").style.backgroundImage = "linear-gradient(to top right, blue-500, blue-300)";
+      document.getElementById("submitBtn").disabled = true;
     }
     router.refresh();
     router.push("/");
-
   };
-  const startingTicketData = {
-    title: "",
-  };
-
-  const [formData, setFormData] = useState(startingTicketData);
 
   return (
     <div className="flex ">
       <form
         className="flex ml-[5%] mt-[3%] 2xl:mt-[1%] gap-2 w-1/2"
         method="post"
+        noValidate
         onSubmit={handleSubmit}
       >
         <input
@@ -59,30 +76,36 @@ const TicketForm = () => {
           focus:outline-none focus:border-blue-500 align-middle placeholder-slate-200 hover:border-blue-300 focus:ring-2 focus:ring-blue-500
           invalid:border-pink-500 invalid:text-pink-600
           focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
+          pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
         style = {{
           zIndex: "10001",
         }}
         />
-        <input
+        <button
           id="submitBtn"
           type="submit"
-          // className="btn "
-          className="btn bg-gradient-to-tr from-blue-700 to-sky-500 text-white rounded-xl transition-all duration-500 ease-in-out transform focus:outline-none focus:ring-2 focus:ring-blue-500 hover:from-blue-500 hover:to-blue-300"
-          value="Join Waitlist"
+          className="btn bg-gradient-to-tr from-blue-700 to-sky-500 text-white rounded-xl transition-all duration-500 ease-in-out transform focus:outline-none focus:ring-2 focus:ring-blue-500 hover:from-blue-500 hover:to-blue-300 flex items-center justify-center"
           style={{
             transition: "background-image 0.5s",
             padding: "1.9% 2%",
-            width: "10vw", // This makes the input 80% of the viewport width
+            width: "10vw",
             minWidth: "100px",
             minHeight: "50px",
-            maxWidth: "200px", // You can set a maximum width for larger screens
-            height: "4vw", // This makes the input 80% of the viewport width
+            maxWidth: "200px",
+            height: "4vw",
             maxHeight: "600px",
             color: "white",
             borderRadius: "10px",
             zIndex: "10001",
           }}
-        />
+          disabled={isLoading} // Disable button when loading
+        >
+          {isLoading ? (
+            <Loader2 className="h-6 w-6 animate-spin" />
+          ) : (
+            "Join Waitlist"
+          )}
+        </button>
       </form>
     </div>
   );
