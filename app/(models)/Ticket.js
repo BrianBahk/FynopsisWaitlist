@@ -6,6 +6,7 @@ mongoose.Promise = global.Promise;
 const ticketSchema = new Schema(
   {
     title: String,
+    active: { type: Boolean, default: false },
   },
   {
     timestamps: true,

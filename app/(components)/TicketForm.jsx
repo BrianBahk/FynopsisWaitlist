@@ -2,8 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { toast } from "sonner"
-import { Loader2 } from "lucide-react"
+import { toast } from "sonner";
+import { Loader2 } from "lucide-react";
 
 const TicketForm = () => {
   const router = useRouter();
@@ -34,7 +34,14 @@ const TicketForm = () => {
     }
 
     setIsLoading(true); // Set loading state to true
-
+    // Send email
+    const emailRes = await fetch("/api/Emails", {
+      method: "POST",
+      body: JSON.stringify({ email: formData.title, name: "User" }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const res = await fetch("/api/Tickets", {
       method: "POST",
       body: JSON.stringify({ formData }),
@@ -45,11 +52,12 @@ const TicketForm = () => {
 
     if (!res.ok) {
       toast("Failed to create Ticket. Please contact support@fynopsis.ai");
-    } 
+    }
     if (res.ok && !isLoading) {
       toast("Submitted!");
       document.getElementById("submitBtn").value = "Submitted!";
-      document.getElementById("submitBtn").style.backgroundImage = "linear-gradient(to top right, blue-500, blue-300)";
+      document.getElementById("submitBtn").style.backgroundImage =
+        "linear-gradient(to top right, blue-500, blue-300)";
       document.getElementById("submitBtn").disabled = true;
     }
     router.refresh();
@@ -77,9 +85,9 @@ const TicketForm = () => {
           invalid:border-pink-500 invalid:text-pink-600
           focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
           pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
-        style = {{
-          zIndex: "10001",
-        }}
+          style={{
+            zIndex: "10001",
+          }}
         />
         <button
           id="submitBtn"
